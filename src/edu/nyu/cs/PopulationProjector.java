@@ -38,7 +38,16 @@ public class PopulationProjector {
      * @throws Exception Allows us to not worry about Exceptions in this function. Java requires the main functino include this, even if not used.
      */
     public static void main(String[] args) throws Exception {
-        // complete this function to solve the problem
+        double changesec = (1.0/7) - (1.0/13) + (1.0/45);
+        double changeyear = (changesec * 31536000)-(changesec * 31536000)%1;
+        int base = 332403650;
+        System.out.println("Here are the projected population numbers for the next five years:");
+        for (int i=1; i<6; i++) {
+            double change = i*changeyear;
+            double population = base + change;
+            long roundpop = Math.round(population);
+            System.out.println("- Year " + (i+2022) + ": " + roundpop);
+        }
     }
 
 

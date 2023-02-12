@@ -25,7 +25,15 @@ import java.util.Scanner;
     
     public static void main(String[] args) {
         
-        // complete this function to solve the problem
-
+        System.out.println("Please enter your monthly savings rate: ");
+        Scanner scn = new Scanner(System.in);
+        String saved = scn.nextLine();
+        float savedfloat = Float.parseFloat(saved);
+        int savedint = Math.round(savedfloat);
+        double inflated = savedfloat*Math.pow(11.9/12,6);
+        int rounded = (int) (Math.round(inflated));
+        System.out.println("If you save $" + savedint + " per month with 10% annual inflation, after 6 months, your account will hold an amount equivalent to $" + rounded + " today.");
+        scn.close();
+        
     }
 }
